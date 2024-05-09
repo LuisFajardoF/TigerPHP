@@ -5,12 +5,11 @@ error_reporting(E_ALL);
 
 require 'functions.php';
 require 'Models/Task.php';
+require 'Enums/ColorsEnum.php';
 
-$tasks = [
-    new Task(completed: true, title: 'Estudiar PHP'),
-    new Task('Hacer ejercicio'),
-    new Task('Proyectarse', false),
-];
+$pdo = dbConnect();
+
+$tasks = getAllTasks($pdo);
 
 $completedTasks = array_filter($tasks, function ($task) {
     return $task->completed;
