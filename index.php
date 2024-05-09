@@ -1,15 +1,14 @@
 <?php
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require 'functions.php';
 require 'Models/Task.php';
-require 'Enums/ColorsEnum.php';
+$query = require 'bootstrap.php';
 
-$pdo = dbConnect();
-
-$tasks = getAllTasks($pdo);
+$tasks = $query->selectAll('tasks', 'Task');
 
 $completedTasks = array_filter($tasks, function ($task) {
     return $task->completed;
