@@ -1,14 +1,13 @@
 <?php
 
-class Task
-{
-    public $color = 'black';
+require 'Model.php';
 
-    // Constructor Property Promotion
-    public function __construct(
-        public $title, 
-        public $completed = false
-    ) {}
+class Task extends Model
+{
+    public $id;
+    public $title;
+    public $color = 'black';
+    public $completed = false;
 
     public function complete()
     {
