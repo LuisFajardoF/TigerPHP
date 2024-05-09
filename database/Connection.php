@@ -3,14 +3,12 @@
 
 class Connection 
 {
-    public static function start() 
+    public static function start($config) 
     {
         try {
-            return new PDO('mysql:host=localhost;dbname=todos', 'root', 'dendritas');
+            return new PDO("{$config['type']}:host={$config['host']};dbname={$config['database']}", $config['user'], $config['password']);
         } catch (PDOException $error) {
             die($error->getMessage());
         }
     }
-
-
 }

@@ -1,12 +1,9 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
+$query = require 'bootstrap.php';
 require 'functions.php';
 require 'Models/Task.php';
-$query = require 'bootstrap.php';
 
 $tasks = $query->selectAll('tasks', 'Task');
 
