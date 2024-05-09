@@ -7,8 +7,8 @@ require 'functions.php';
 require 'Models/Task.php';
 
 $tasks = [
-    new Task('Estudiar PHP', true),
-    new Task('Hacer ejercicio', false),
+    new Task(completed: true, title: 'Estudiar PHP'),
+    new Task('Hacer ejercicio'),
     new Task('Proyectarse', false),
 ];
 

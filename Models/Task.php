@@ -2,15 +2,11 @@
 
 class Task
 {
-    public $title;
-
-    public $completed = false;
-
-    public function __construct($title, $completed)
-    {
-        $this->title = $title;
-        $this->completed = $completed;
-    }
+    // Constructor Property Promotion
+    public function __construct(
+        public $title, 
+        public $completed = false
+    ) {}
 
     public function complete()
     {
