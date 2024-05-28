@@ -9,14 +9,28 @@
     <h2>Completadas</h2>
     <ul>
         <?php foreach ($completedTasks as $task): ?>
-            <li style="color: <?= $task->color ?>;"><?= $task->title ?></li>
+            <li style="color: <?= $task->color ?>;">
+                <?= $task->title ?>
+                <form style="display: inline" action="toggle-task.php" method="POST">
+                    <input type="hidden" name="completed" value="0">
+                    <input type="hidden" name="id" value="<?= $task->id ?>">
+                    <button type="submit">➖</button>
+                </form>
+            </li>
         <?php endforeach ?>
     </ul>
 
     <h2>Pendientes</h2>
     <ul>
         <?php foreach ($pendingTasks as $task): ?>
-            <li style="color: <?= $task->color ?>;"><?= $task->title ?></li>
+            <li style="color: <?= $task->color ?>;">
+                <?= $task->title ?>
+                <form style="display: inline" action="toggle-task.php" method="POST">
+                    <input type="hidden" name="completed" value="1">
+                    <input type="hidden" name="id" value="<?= $task->id ?>">
+                    <button type="submit">✅</button>
+                </form>
+            </li>
         <?php endforeach ?>
     </ul>
 
