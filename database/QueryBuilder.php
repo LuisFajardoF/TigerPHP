@@ -48,4 +48,16 @@ class QueryBuilder
             die($error->getMessage());
         }
     }
+
+    public function delete($table, $id) 
+    {
+        $sql = "delete from {$table} where id=:id";
+        
+        try {
+            $query = $this->pdo->prepare($sql);
+            $query->execute(['id' => $id]);
+        } catch (PDOException $error) {
+            die($error->getMessage());
+        }
+    }
 }
