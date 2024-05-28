@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <a href="Controllers/contact.php">Contacto</a>
+        <a href="Controllers/about.php">Nosotros</a>
+        <a href="Controllers/services.php">Servicios</a>
+    </nav>
+
     <h2>Completadas</h2>
     <ul>
         <?php foreach ($completedTasks as $task): ?>
