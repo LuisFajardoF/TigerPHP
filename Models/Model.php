@@ -14,9 +14,7 @@ class Model
         $model = new static;
         $rows = App::get('database')
             ->selectAll($model->getTable());
-        return array_map(function ($row) {
-            return new static($row);
-        }, $rows);
+        return array_map(fn ($row) => new static($row), $rows);
     }
 
     public static function create($properties)
@@ -75,5 +73,14 @@ class Model
     {
         $this->properties = array_merge($this->properties, $properties);
         return $this;
+    }
+
+    public function __get($name) 
+    {
+        if (array_key_exists($name, $this->properties)) {
+            return $this->properties[$name];
+        }
+
+        throw new Exception("La propiedad {$name} no existe");
     }
 }
