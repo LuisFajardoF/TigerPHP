@@ -75,6 +75,7 @@ class Model
         return $this;
     }
 
+    // Metodo magico de PHP
     public function __get($name) 
     {
         if (array_key_exists($name, $this->properties)) {
