@@ -9,6 +9,16 @@ class Model
         $this->properties = $properties;
     }
 
+    public static function all()
+    {
+        $model = new static;
+        $rows = App::get('database')
+            ->selectAll($model->getTable());
+        return array_map(function ($row) {
+            return new static($row);
+        }, $rows);
+    }
+
     public static function create($properties)
     {
         $model = new static($properties);
