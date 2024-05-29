@@ -8,6 +8,7 @@ class Task extends Model
     public $title;
     public $color = 'black';
     public $completed = false;
+    protected $table = 'tasks';
 
     public function complete()
     {
