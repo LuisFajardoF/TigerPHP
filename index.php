@@ -1,6 +1,11 @@
 <?php
 
 $query = require 'Core/bootstrap.php';
-require 'Models/Task.php';
 
-require 'Controllers/index.php';
+$routes = require('routes.php');
+
+$url = Request::url();
+
+$router = new Router;
+$router->register($routes);
+require $router->handle($url);

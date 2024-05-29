@@ -7,9 +7,9 @@
 </head>
 <body>
     <nav>
-        <a href="Controllers/contact.php">Contacto</a>
-        <a href="Controllers/about.php">Nosotros</a>
-        <a href="Controllers/services.php">Servicios</a>
+        <a href="contact">Contacto</a>
+        <a href="about">Nosotros</a>
+        <a href="services">Servicios</a>
     </nav>
 
     <h2>Completadas</h2>
@@ -17,13 +17,13 @@
         <?php foreach ($completedTasks as $task): ?>
             <li style="color: <?= $task->color ?>;">
                 <?= $task->title ?>
-                <form style="display: inline" action="toggle-task.php" method="POST">
+                <form style="display: inline" action="tasks/toggle" method="POST">
                     <input type="hidden" name="completed" value="0">
                     <input type="hidden" name="id" value="<?= $task->id ?>">
                     <button type="submit">➖</button>
                 </form>
 
-                <form onsubmit="return confirm('Desea eliminar el registro?');" style="display: inline" action="delete-task.php" method="POST">
+                <form onsubmit="return confirm('Desea eliminar el registro?');" style="display: inline" action="tasks/delete" method="POST">
                     <input type="hidden" name="id" value="<?= $task->id ?>">
                     <button type="submit">🗑️</button>
                 </form>
@@ -36,13 +36,13 @@
         <?php foreach ($pendingTasks as $task): ?>
             <li style="color: <?= $task->color ?>;">
                 <?= $task->title ?>
-                <form style="display: inline" action="toggle-task.php" method="POST">
+                <form style="display: inline" action="tasks/toggle" method="POST">
                     <input type="hidden" name="completed" value="1">
                     <input type="hidden" name="id" value="<?= $task->id ?>">
                     <button type="submit">✅</button>
                 </form>
 
-                <form onsubmit="return confirm('Desea eliminar el registro?');" style="display: inline" action="delete-task.php" method="POST">
+                <form onsubmit="return confirm('Desea eliminar el registro?');" style="display: inline" action="tasks/delete" method="POST">
                     <input type="hidden" name="id" value="<?= $task->id ?>">
                     <button type="submit">🗑️</button>
                 </form>
@@ -50,7 +50,7 @@
         <?php endforeach ?>
     </ul>
 
-    <form action="create-task.php" method="POST">
+    <form action="tasks/create" method="POST">
         <input type="text" name="title">
         <input type="color" name="color">
         <button type="submit">Guardar</button>
