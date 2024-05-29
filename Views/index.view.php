@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <nav>
-        <a href="contact">Contacto</a>
-        <a href="about">Nosotros</a>
-        <a href="services">Servicios</a>
-    </nav>
 
+<?php require('partials/head.view.php') ?>
     <h2>Completadas</h2>
     <ul>
         <?php foreach ($completedTasks as $task): ?>
@@ -55,5 +43,4 @@
         <input type="color" name="color">
         <button type="submit">Guardar</button>
     </form>
-</body>
-</html>
+<?php require('partials/footer.view.php') ?>
