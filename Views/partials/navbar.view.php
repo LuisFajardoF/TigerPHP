@@ -1,5 +1,7 @@
 <nav>
-    <a href="/">Inicio</a>
+    <?php if (Auth::check()): ?>
+        <a href="/index">Inicio</a>
+    <?php endif ?>
     <a href="contact">Contacto</a>
     <a href="about">Nosotros</a>
     <a href="services">Servicios</a>
