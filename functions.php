@@ -10,3 +10,8 @@ function view($view, $params = [])
     extract($params);
     require "Views/{$view}.view.php";
 }
+
+function redirect($path) 
+{
+    header("Location: {$path}");    
+}
