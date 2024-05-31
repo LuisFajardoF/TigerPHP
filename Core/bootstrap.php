@@ -9,6 +9,9 @@ require 'Core/Auth.php';
 require 'Models/Task.php';
 require 'Models/User.php';
 require 'Controllers/HomeController.php';
+require 'Controllers/PagesController.php';
+require 'Controllers/LoginController.php';
+require 'Controllers/TasksController.php';
 require 'functions.php';
 
 App::set('config', require('config.php'));

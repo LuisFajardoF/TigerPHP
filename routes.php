@@ -2,14 +2,13 @@
 
 return [
     'index' => ['HomeController', 'show'],
-    // '' => 'Controllers/login-form.php',
-    // '404' => 'Controllers/404.php',
-    // 'about' => 'Controllers/about.php',
-    // 'services' => 'Controllers/services.php',
-    // 'contact' => 'Controllers/contact.php',
-    // 'tasks/create' => 'Controllers/create-task.php',
-    // 'tasks/toggle' => 'Controllers/toggle-task.php',
-    // 'tasks/delete' => 'Controllers/delete-task.php',
-    // 'login' => 'Controllers/login.php',
-    // 'logout' => 'Controllers/logout.php',
+    'about' => ['PagesController','about'],
+    'services' => ['PagesController','services'],
+    'contact' => ['PagesController','contact'],
+    'tasks/create' => ['TasksController' ,'create'],
+    'tasks/toggle' => ['TasksController' ,'toggle'],
+    'tasks/delete' => ['TasksController' ,'delete'],
+    '' => ['LoginController', 'show'],
+    'login' => ['LoginController', 'login'],
+    'logout' => ['LoginController', 'logout'],
 ];
