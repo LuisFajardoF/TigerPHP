@@ -1,3 +1,3 @@
 <?php
 
-require 'Views/services.view.php';
+return view('services');

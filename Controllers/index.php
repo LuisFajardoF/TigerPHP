@@ -12,5 +12,5 @@ if (Auth::check())
         return !$task->completed;
     });
     
-    require 'Views/index.view.php';
+    require('Views/index.view.php');
 } else require header('Location: /');

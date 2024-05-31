@@ -1,3 +1,3 @@
 <?php 
 
-require 'Views/login-form.view.php';
+return view('login-form');
