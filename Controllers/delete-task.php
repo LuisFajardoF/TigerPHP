@@ -3,4 +3,4 @@
 $task = Task::find($_POST['id']);
 $task->delete();
 
-header('Location: /');
+header('Location: /index');

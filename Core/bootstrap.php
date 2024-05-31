@@ -8,6 +8,7 @@ require 'Core/App.php';
 require 'Core/Auth.php';
 require 'Models/Task.php';
 require 'Models/User.php';
+require 'Controllers/HomeController.php';
 require 'functions.php';
 
 App::set('config', require('config.php'));

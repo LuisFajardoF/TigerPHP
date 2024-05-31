@@ -6,4 +6,4 @@ Task::create([
     'completed' => 0,
 ]); 
 
-header('Location: /');
+header('Location: /index');

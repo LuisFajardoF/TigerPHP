@@ -5,4 +5,4 @@ $task->update([
     'completed' => $_POST['completed'],
 ]); 
 
-header('Location: /');
+header('Location: /index');
