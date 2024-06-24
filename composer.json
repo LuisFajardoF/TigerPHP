@@ -1,0 +1,19 @@
+{
+    "name": "luis/step2step-php",
+    "type": "project",
+    "authors": [
+        {
+            "name": "LuisFajardoF",
+            "email": "luis.fajardozap@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "./"
+        ],
+        "files": [
+            "functions.php"
+        ]
+    }
+}
