@@ -1,5 +1,10 @@
 <?php 
 
+namespace App\Controllers;
+
+use App\Models\Task;
+use Core\Auth;
+
 class HomeController
 {
     public function show()

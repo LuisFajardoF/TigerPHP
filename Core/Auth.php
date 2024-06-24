@@ -1,5 +1,8 @@
 <?php 
 
+namespace Core;
+
+use App\Models\User;
 class Auth 
 {
     public static function tryLogin($email, $password)

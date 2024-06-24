@@ -20,7 +20,7 @@
       id="mobile-menu"
     >
       <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-        <?php if (Auth::check()): ?>
+        <?php if (Core\Auth::check()): ?>
             <li>
                 <a
                     href="/index"
@@ -56,7 +56,7 @@
           </a>
         </li>
         <li>
-            <?php if (Auth::check()): ?>
+            <?php if (Core\Auth::check()): ?>
                 <span><?php $_SESSION['name'] ?></span>
                 <form action="/logout" method="post">
                     <button class="btn-action" >Salir</button>
