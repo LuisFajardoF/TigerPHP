@@ -6,7 +6,7 @@ return [
         'host' => 'localhost',
         'database' => 'todos',
         'user' => 'root',
-        'password' => 'dendritas',
+        'password' => '',
     ],
     'error_handling' => true,
 ];
