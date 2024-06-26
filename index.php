@@ -3,13 +3,10 @@
 require 'vendor/autoload.php';
 require 'Core/bootstrap.php';
 
-use Core\Request;
-use Core\Router;
+require 'routes.php';
 
-$routes = require('routes.php');
+// $url = Request::url();
 
-$url = Request::url();
-
-$router = new Router;
-$router->register($routes);
-$router->handle($url);
+// $router = new Router;
+// $router->register($routes);
+// $router->handle($url);

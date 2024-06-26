@@ -69,7 +69,7 @@ class Model
     public function save()
     {
         if (empty($this->table)) {
-            throw new Exception("El nombre de la tabla no ha sido definido");
+            throw new \Exception("El nombre de la tabla no ha sido definido");
         }
 
         App::get('database')
@@ -94,6 +94,6 @@ class Model
             return $this->properties[$name];
         }
 
-        throw new Exception("La propiedad {$name} no existe");
+        throw new \Exception("La propiedad {$name} no existe");
     }
 }

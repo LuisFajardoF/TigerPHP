@@ -7,7 +7,9 @@
             "email": "luis.fajardozap@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "pecee/simple-router": "5.4.1.7"
+    },
     "autoload": {
         "psr-4": {
             "App\\": "App/",
