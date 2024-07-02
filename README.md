@@ -38,3 +38,12 @@ composer install
 ```
 composer dumpautoload
 ```
+
+### Paquetes instalados
+
+Para generar los paquetes necesarios en la carpeta `vendor` de la aplicacion instale los siguientes paquetes:
+
+```
+composer require pecee/simple-router
+composer require illuminate/database
+```

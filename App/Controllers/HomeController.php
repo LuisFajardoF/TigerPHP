@@ -11,18 +11,10 @@ class HomeController
     {
         if (Auth::check())
         {
-            $tasks = Task::all();
-            
-            $completedTasks = array_filter($tasks, function ($task) {
-                return $task->completed;
-            });
-            
-            $pendingTasks = array_filter($tasks, function ($task) {
-                return !$task->completed;
-            });
-            
+            $completedTasks = Task::where('completed', true)->get();
+            $pendingTasks = Task::where('completed', false)->get();
+                        
             return view('index', [
-                'tasks' => $tasks, 
                 'completedTasks' => $completedTasks, 
                 'pendingTasks' => $pendingTasks, 
             ]);

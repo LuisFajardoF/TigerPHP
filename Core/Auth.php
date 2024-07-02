@@ -7,7 +7,7 @@ class Auth
 {
     public static function tryLogin($email, $password)
     {
-        $users = User::findBy(['email' => $email]);
+        $users = User::where('email', $email)->get();
     
         if (!empty($users) AND password_verify($password, $users[0]->password)) {
             static::ensureSessionStarted();

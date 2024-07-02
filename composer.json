@@ -8,7 +8,8 @@
         }
     ],
     "require": {
-        "pecee/simple-router": "5.4.1.7"
+        "pecee/simple-router": "5.4.1.7",
+        "illuminate/database": "^11.13"
     },
     "autoload": {
         "psr-4": {
