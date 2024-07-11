@@ -9,7 +9,9 @@
     ],
     "require": {
         "pecee/simple-router": "5.4.1.7",
-        "illuminate/database": "^11.13"
+        "illuminate/database": "^11.13",
+        "symfony/var-dumper": "^7.1",
+        "twig/twig": "^3.10"
     },
     "autoload": {
         "psr-4": {

@@ -4,9 +4,9 @@ return [
     'database' => [
         'type' => 'mysql',
         'host' => 'localhost',
-        'database' => 'todos',
+        'database' => 'bankito',
         'user' => 'root',
-        'password' => 'dendritas',
+        'password' => '',
     ],
     'error_handling' => true,
 ];

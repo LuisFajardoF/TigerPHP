@@ -11,13 +11,10 @@ class HomeController
     {
         if (Auth::check())
         {
-            $completedTasks = Task::where('completed', true)->get();
-            $pendingTasks = Task::where('completed', false)->get();
+            // $completedTasks = Task::where('completed', true)->get();
+            // $pendingTasks = Task::where('completed', false)->get();
                         
-            return view('index', [
-                'completedTasks' => $completedTasks, 
-                'pendingTasks' => $pendingTasks, 
-            ]);
+            return view('index');
         } else require header('Location: /');
     }
 }

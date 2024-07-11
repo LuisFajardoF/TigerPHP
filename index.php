@@ -3,8 +3,10 @@
 require 'vendor/autoload.php';
 require 'Core/bootstrap.php';
 
-use Illuminate\Database\Capsule\Manager as Capsule;
 use Core\App;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
 
@@ -26,5 +28,7 @@ $capsule->setAsGlobal();
 
 // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
 $capsule->bootEloquent();
+
+// dd(password_hash('@admin', PASSWORD_DEFAULT));
 
 require 'routes.php';

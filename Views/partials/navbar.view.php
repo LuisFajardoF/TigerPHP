@@ -1,79 +1,50 @@
-<nav class="bg-white border border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 shadow">
-  <div class="container flex flex-wrap justify-between items-center mx-auto">
-    <a href="/index" class="flex items-center">
-      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-        Tareas
-      </span>
-    </a>
 
-    <div class="flex items-center">
-      <button
-        id="menu-toggle"
-        type="button"
-        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
-      >
-      </button>
-    </div>
+<div class="min-h-full">
+  <nav class="bg-slate-100">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img class="h-8 w-8" src="../../src/img/tiger-256x256.png" alt="Your Company">
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-4 flex items-center md:ml-6">
+            <button type="button" class="relative rounded-full bg-slate-100 p-1 text-slate-900  focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-100">
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">View notifications</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+              </svg>
+            </button>
 
-    <div
-      class="flex w-full md:block md:w-auto items-center"
-      id="mobile-menu"
-    >
-      <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-        <?php if (Core\Auth::check()): ?>
-            <li>
-                <a
-                    href="/index"
-                    class="nav-item"
-                    aria-current="page"
-                >
-                    Inicio
-            </a>
-            </li>
-        <?php endif ?>
-        <li>
-          <a
-            href="contact"
-            class="nav-item"
-          >
-            Contacto
-          </a>
-        </li>
-        <li>
-          <a
-            href="about"
-            class="nav-item"
-          >
-            Nosotros
-          </a>
-        </li>
-        <li>
-          <a
-            href="services"
-            class="nav-item"
-          >
-            Servicios
-          </a>
-        </li>
-        <li>
-            <?php if (Core\Auth::check()): ?>
-                <span><?php $_SESSION['name'] ?></span>
+            <!-- Profile dropdown -->
+            <div class="relative ml-3" x-data="{ dropdown: false}">
+              <div>
+                <button 
+                  x-on:click="dropdown = !dropdown"
+                  type="button" class="relative flex max-w-xs items-center rounded-full bg-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-100" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <span class="absolute -inset-1.5"></span>
+                  <span class="sr-only">Open user menu</span>
+                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </button>
+              </div>
+
+              <div 
+                x-show="dropdown"
+                class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                <!-- Active: "bg-slate-100", Not Active: "" -->
+                <a href="#" class="block px-4 py-2 text-sm text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-0">Mi Perfil</a>
+                <a href="#" class="block px-4 py-2 text-sm text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-1">Configuración</a>
                 <form action="/logout" method="post">
-                    <button class="btn-action" >Salir</button>
+                  <input type="submit" class="block px-4 py-2 text-sm text-slate-900" role="menuitem" tabindex="-1" value="Cerrar Sesión">
                 </form>
-            <?php endif ?>
-        </li>
-      </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </nav>
+</div>
 
-  </div>
-</nav>
-
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  menuToggle.addEventListener('click', function () {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>

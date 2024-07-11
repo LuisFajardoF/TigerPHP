@@ -1,31 +1,42 @@
+<?php include('partials/head.view.php') ?>
 
-<?php require('partials/head.view.php') ?>
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img class="mx-auto h-30 w-auto" src="./../src/img/tiger-128x128.png" alt="Your Company">
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Bienvenido Liceista!</h2>
+    <h6 class="mt-3 text-center font-bold leading-9 tracking-tight text-gray-900">Máximo ejemplar de la procastinación..!</h6>
+  </div>
 
-<div class="min-h-screen flex items-center justify-center w-full dark:bg-gray-950">
-    <div class="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md">
-        <h1 class="text-2xl font-bold text-center mb-4 dark:text-gray-200">Bienvenido!</h1>
-        <form action="/login" method="post">
-            <div class="mb-4">
-                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Correo electronico</label>
-                <input type="email" name="email" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="your@email.com" required>
-            </div>
-            <div class="mb-4">
-                <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Contraseña</label>
-                <input type="password" name="password" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your password" required>
-                <a href="#"
-                    class="text-xs text-gray-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Olvido su contraseña?</a>
-            </div>
-            <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center">
-                    <input type="checkbox" id="remember" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 focus:outline-none">
-                    <label for="remember" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">Recordar contraseña</label>
-                </div>
-                <a href="#"
-                    class="text-xs text-indigo-500 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Crear Cuenta</a>
-            </div>
-            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Login</button>
-        </form>
-    </div>
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form class="space-y-6" action="/login" method="POST">
+      <div>
+        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Correo electronico</label>
+        <div class="mt-2">
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="example@email.com" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+        <div class="flex items-center justify-between">
+          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Contraseña</label>
+          <div class="text-sm">
+            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Olvidó su contraseña?</a>
+          </div>
+        </div>
+        <div class="mt-2">
+          <input id="password" placeholder="Enter your password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-md font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Iniciar Sesion</button>
+      </div>
+    </form>
+
+    <p class="mt-10 text-center text-sm text-gray-500">
+      <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Registrarse</a>
+    </p>
+  </div>
 </div>
 
-<?php require('partials/footer.view.php') ?>
+<?php include 'partials/footer.view.php' ?>

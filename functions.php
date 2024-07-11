@@ -1,8 +1,15 @@
 <?php
 
-function dd($value) 
-{
-    return die(var_dump($value));
+use Symfony\Component\VarDumper\VarDumper;
+
+if (!function_exists('dd')) {
+    function dd(...$values) 
+    {
+        foreach ($values as $var) {
+            VarDumper::dump($var);
+        }
+        die(0);
+    }
 }
 
 function view($view, $params = [])
