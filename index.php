@@ -4,8 +4,6 @@ require 'vendor/autoload.php';
 require 'Core/bootstrap.php';
 
 use Core\App;
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;

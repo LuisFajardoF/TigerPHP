@@ -32,7 +32,7 @@
         <span class="text-xl"><i class="bx bx-task-x"></i></span>
         <span class="px-2">Cancelar Cuenta</span>
     </a>
-    <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+    <a href="/create-user" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
         <span class="text-xl"><i class="bx bx-user-plus"></i></span>
         <span class="px-2">Crear Usuarios</span>
     </a>

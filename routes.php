@@ -1,33 +1,25 @@
 <?php
 
-use App\Controllers\HomeController;
-use App\Controllers\LoginController;
-use App\Controllers\PagesController;
-use App\Controllers\TasksController;
+use Core\Auth;
+use App\Controllers\{
+    HomeController, 
+    LoginController, 
+    UsersController
+};
+
 use Pecee\SimpleRouter\SimpleRouter;
 
-SimpleRouter::get('index', [HomeController::class, 'show']);
-SimpleRouter::get('/', [LoginController::class, 'show']);
-SimpleRouter::post('login', [LoginController::class, 'login']);
-SimpleRouter::post('logout', [LoginController::class, 'logout']);
-SimpleRouter::get('about', [PagesController::class, 'about']);
-SimpleRouter::get('services', [PagesController::class, 'services']);
-SimpleRouter::get('contact', [PagesController::class, 'contact']);
-SimpleRouter::post('tasks/create', [TasksController::class, 'create']);
-SimpleRouter::post('tasks/toggle/{id}', [TasksController::class, 'toggle']);
-SimpleRouter::post('tasks/delete/{id}', [TasksController::class, 'delete']);
+if (Auth::check()) {
+    SimpleRouter::get('index', [HomeController::class, 'show']);
+    SimpleRouter::get('create-user', [HomeController::class, 'create_user']);
+    SimpleRouter::get('show-user', [UsersController::class, 'show']);
+    SimpleRouter::post('logout', [LoginController::class, 'logout']);
+    SimpleRouter::post('users/create', [UsersController::class, 'create']);
+    //las nuevas rutas deberan ir justo abajo de esta linea 
+
+} else {
+    SimpleRouter::get('/', [LoginController::class, 'show']);
+    SimpleRouter::post('login', [LoginController::class, 'login']);
+}
 
 SimpleRouter::start();
-
-// return [
-//     'index' => ['HomeController', 'show'],
-//     'about' => ['PagesController','about'],
-//     'services' => ['PagesController','services'],
-//     'contact' => ['PagesController','contact'],
-//     'tasks/create' => ['TasksController' ,'create'],
-//     'tasks/toggle' => ['TasksController' ,'toggle'],
-//     'tasks/delete' => ['TasksController' ,'delete'],
-//     '' => ['LoginController', 'show'],
-//     'login' => ['LoginController', 'login'],
-//     'logout' => ['LoginController', 'logout'],
-// ];

@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use Core\Auth;
+use Core\{App, Auth};
 
 class LoginController
 {
@@ -12,7 +12,8 @@ class LoginController
     }
     public function login()
     {
-        Auth::tryLogin($_POST['email'], $_POST['password']);
+        $domain = App::get('config')['domain'];
+        Auth::tryLogin(($_POST['email'] . $domain), $_POST['password']);
 
         if (Auth::check()) {
             return redirect('/index');
