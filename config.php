@@ -6,7 +6,7 @@ return [
         'host' => 'localhost',
         'database' => 'bankito',
         'user' => 'root',
-        'password' => 'dendritas',
+        'password' => '',
     ],
     'domain' => '@bankito.com',
     'debug' => true,
