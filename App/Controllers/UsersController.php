@@ -10,9 +10,9 @@ class UsersController {
     {
         $domain = \Core\App::get('config')['domain'];
 
-        $user = User::where('username', $_POST['email']);
+        $user = User::where('username', $_POST['email'])->get();
         
-        if ($user == null) {
+        if ($user->isEmpty()) {
             //ORM Eloquent
             User::create([
                 'username' => $_POST['email'], // username without domain
