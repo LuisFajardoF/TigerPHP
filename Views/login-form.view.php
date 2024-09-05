@@ -4,7 +4,7 @@
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
     <img class="mx-auto h-30 w-auto" src="./../src/img/tiger-128x128.png" alt="Your Company">
     <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Bienvenido Liceista!</h2>
-    <h4 class="mt-3 text-center font-bold leading-9 tracking-tight text-gray-900">Justicia para Trigo..!</h4>
+    <h4 class="mt-3 text-center font-bold leading-9 tracking-tight text-gray-900">Bienvenido Liceista..!</h4>
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
